@@ -31,7 +31,6 @@ public class TestBookingPage{
 		bp.enterStationTill("Ивано-Франковск");
 		bp.enterDate("01.12.2015");
 		bp.submitbuttonSearch();
-		//bp.verifyTrainsTable();
 		//bp.verifyTrainPresent();
 		//bp.verifyTrainsPresent();
 	  	}

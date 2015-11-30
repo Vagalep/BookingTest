@@ -56,11 +56,6 @@ public class BookingPage {
 	     search.clickSearchButton();
 	}
 
-	public void verifyTrainsTable() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public void verifyTrainPresent() {
 		// TODO Auto-generated method stub
 		
