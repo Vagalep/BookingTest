@@ -1,7 +1,5 @@
 package bookingTest;
 
-import static org.testng.Assert.*;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -30,12 +28,12 @@ public class TestBookingPage{
 	  	@Test
 	  	public void test() throws Exception {
 		bp.enterStationFrom("Киев");
-		bp.enterStationTill("Ивано-франковск");
+		bp.enterStationTill("Ивано-Франковск");
 		bp.enterDate("01.12.2015");
 		bp.submitbuttonSearch();
-		bp.trainsTable();
-		
-		assertEquals(true, bp.isTableEnabled());
+		//bp.verifyTrainsTable();
+		//bp.verifyTrainPresent();
+		//bp.verifyTrainsPresent();
 	  	}
 	  	
 		@AfterClass
