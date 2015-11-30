@@ -4,22 +4,22 @@ import static org.testng.Assert.*;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TestBookingPage {
+public class TestBookingPage{
 
 	  WebDriver driver;
 	  BookingPage bp;
 	  
 	  	@BeforeClass
-	  	public void setUp() throws Exception {
+	  	public void startUp() throws Exception {
 	    driver = new FirefoxDriver();
+	    bp = new BookingPage(driver);
+	    
 	    driver.manage().window().maximize();
 	    driver.get("http://booking.uz.gov.ua/ru/");
 		driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
@@ -28,14 +28,14 @@ public class TestBookingPage {
 	  	}
 	  	
 	  	@Test
-	  	 public void test() throws Exception {
+	  	public void test() throws Exception {
 		bp.enterStationFrom("Киев");
 		bp.enterStationTill("Ивано-франковск");
 		bp.enterDate("01.12.2015");
 		bp.submitbuttonSearch();
 		bp.trainsTable();
 		
-		Assert.assertEquals(true, bp.isTableEnabled());
+		assertEquals(true, bp.isTableEnabled());
 	  	}
 	  	
 		@AfterClass

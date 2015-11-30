@@ -23,7 +23,7 @@ public class BookingPage {
 	private WebElement search;
 	
 	@FindBy (xpath="//*[@id='ts_res_tbl']")
-	public  WebElement tTable;
+	public  WebElement trainsTable;
     
     public BookingPage(WebDriver driver) {
 	HtmlElementLoader.populatePageObject(this, driver);
@@ -48,8 +48,15 @@ public class BookingPage {
 	     search.click();
 	}
 	
-	public boolean isTableEnabled() {
-		return tTable.findElement(By.xpath("//*[@id='ts_res_tbl']")).isEnabled();
+	public void trainsTable() {
+		
+		
 	}
+	
+	public boolean isTableEnabled() {
+		return trainsTable.findElement(By.xpath("//*[@id='ts_res_tbl']")).isEnabled();
+	}
+
+
 }
 	
