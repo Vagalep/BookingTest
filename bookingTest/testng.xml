@@ -3,7 +3,7 @@
 <suite name="Functional tests" >
   <test name="Default">
     <classes>
-      <class name="TestBookingPage"/>
+      <class name="bookingTest.TestBookingPage"/>
     </classes>
   </test> 
 </suite>
