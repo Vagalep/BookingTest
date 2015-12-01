@@ -1,16 +1,16 @@
 package bookingTest;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import ru.yandex.qatools.htmlelements.annotations.Name;
+import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
-public class ElementSearchButton {
+public class ElementSearchButton extends HtmlElement {
 
-	@Name("Search Button")
-    @FindBy(xpath = ".//*[@id='content']/form/p/button")
-    private SearchButton searchButton;
+    @FindBy(xpath = "//*[@id='content']/form/p/button")
+    private WebElement searchButton;
     
-    public void clickSearchButton(String request) {
+    public void clickSearchButton() {
     	searchButton.click();
         }
 }

@@ -1,17 +1,27 @@
 package bookingTest;
 
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import ru.yandex.qatools.htmlelements.annotations.Name;
-import ru.yandex.qatools.htmlelements.element.TextInput;
+import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
-public class ElementDatePicker {
+public class ElementDatePicker extends HtmlElement {
 
-    @Name("Date input")
-    @FindBy(xpath = ".//*[@id='date_dep']")
-    private DateInput dateInput;
+    @FindBy(xpath = ".//input")
+    private WebElement dateInput;
     
-    public void enterDateString(String request) {
-    	dateInput.sendKeys(request).click();
-        }
+    @FindBy(xpath = ".//table[@class='month']//td[@class!='blank' and @class!='disabled']")
+    private List<WebElement> allDate;
+   
+    public void chooseDateFromList() {
+    	dateInput.click();
+    	for (WebElement item : allDate) {
+    	    if (item.getAttribute("selected")) 
+    		item.click();
+    		break;
+    }
+}
 }

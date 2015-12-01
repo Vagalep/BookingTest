@@ -19,20 +19,20 @@ public class TestBookingPage{
 	    bp = new BookingPage(driver);
 	    
 	    driver.manage().window().maximize();
-	    driver.get("http://booking.uz.gov.ua/ru/");
-		driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    driver.get("http://booking.uz.gov.ua/en/");
+		driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	  	}
 	  	
 	  	@Test
-	  	public void test() throws Exception {
-		bp.enterStationFrom("Киев");
-		bp.enterStationTill("Ивано-Франковск");
-		bp.enterDate("01.12.2015");
+	  	public void test(){
+		bp.enterStationFrom("Kyiv");
+		bp.enterStationTill("Ivano-Frankivsk");
+		bp.enterDate();
 		bp.submitbuttonSearch();
-		//bp.verifyTrainPresent();
-		//bp.verifyTrainsPresent();
+		bp.verifyTrainsCount();
+		bp.verifyTrainPresent("143 K");
 	  	}
 	  	
 		@AfterClass
