@@ -30,9 +30,9 @@ public class TestBookingPage{
 		bp.enterStationFrom("Kyiv");
 		bp.enterStationTill("Ivano-Frankivsk");
 		bp.enterDate();
-		bp.submitbuttonSearch();
+		bp.submitButtonSearch();
 		bp.verifyTrainsCount();
-		bp.verifyTrainPresent("143 K");
+		bp.verifyTrainPresent("143 Ê");
 	  	}
 	  	
 		@AfterClass

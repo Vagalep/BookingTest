@@ -15,7 +15,7 @@ public class BookingPage {
 	@FindBy (xpath="//*[@id='station_till']")
 	private ElementStationPicker station_till;
 	
-	@FindBy (xpath="//*[@id='date_dep']")
+	@FindBy (xpath=".//*[@id='date_dep']")
 	private ElementDatePicker date;
 	
 	@FindBy (xpath="//*[@name='search']")
@@ -37,10 +37,11 @@ public class BookingPage {
     }
 	
     public void enterDate(){
+    	date.click();
     	date.chooseDateFromList();
 	}
 	
-	public void submitbuttonSearch() {
+	public void submitButtonSearch() {
 	     search.clickSearchButton();
 	}
 	
