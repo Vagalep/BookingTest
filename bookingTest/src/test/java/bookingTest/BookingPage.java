@@ -2,9 +2,7 @@ package bookingTest;
 
 import static org.testng.Assert.*;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
@@ -40,10 +38,6 @@ public class BookingPage {
 	
     public void enterDate(){
     	date.chooseDateFromList();
-	//public void enterDate(String value){
-	//	date.clear();
-	//	date.sendKeys(value);
-	//	date.sendKeys(Keys.ENTER);
 	}
 	
 	public void submitbuttonSearch() {
@@ -59,7 +53,7 @@ public class BookingPage {
 	}
 
 	public void verifyTrainPresent(String value) {
-		assertTrue(trainsTable.trainNumber(value),"Train wint specified number is absent");
+		assertTrue(trainsTable.trainNumber(value),"Train with specified number is absent");
 	}
 }
 	

@@ -9,19 +9,16 @@ import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
 public class ElementDatePicker extends HtmlElement {
-
-    @FindBy(xpath = ".//input")
-    private WebElement dateInput;
     
     @FindBy(xpath = ".//table[@class='month']//td[@class!='blank' and @class!='disabled']")
     private List<WebElement> allDate;
    
     public void chooseDateFromList() {
-    	dateInput.click();
+    	this.click();
     	for (WebElement item : allDate) {
-    	    if (item.getAttribute("selected")) 
+    		if ( item.getAttribute("class").equals("selected"))
     		item.click();
     		break;
-    }
-}
+    		}
+    	}
 }

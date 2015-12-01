@@ -20,9 +20,9 @@ public class TestBookingPage{
 	    
 	    driver.manage().window().maximize();
 	    driver.get("http://booking.uz.gov.ua/en/");
-		driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  	}
 	  	
 	  	@Test
