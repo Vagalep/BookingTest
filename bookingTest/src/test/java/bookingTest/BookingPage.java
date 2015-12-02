@@ -15,7 +15,10 @@ public class BookingPage {
 	@FindBy (xpath="//*[@id='station_till']")
 	private ElementStationPicker station_till;
 	
-	@FindBy (xpath=".//*[@id='date_dep']")
+	@FindBy (xpath="//*[@id='date_dep']")
+	private ElementDatePicker dateField;
+	
+	@FindBy (xpath="//table[@class='month']")
 	private ElementDatePicker date;
 	
 	@FindBy (xpath="//*[@name='search']")
@@ -23,6 +26,8 @@ public class BookingPage {
 	
 	@FindBy (xpath="//*[@id='ts_res_tbl']")
 	public  ElementTrainsTable trainsTable;
+	
+	
     
     public BookingPage(WebDriver driver) {
 	HtmlElementLoader.populatePageObject(this, driver);
@@ -37,7 +42,7 @@ public class BookingPage {
     }
 	
     public void enterDate(){
-    	date.click();
+    	dateField.click();
     	date.chooseDateFromList();
 	}
 	

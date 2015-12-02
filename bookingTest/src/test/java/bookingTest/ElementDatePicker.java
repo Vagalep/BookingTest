@@ -13,7 +13,7 @@ import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
 public class ElementDatePicker extends HtmlElement {
     
-    @FindBy(xpath = "//table[@class='month']/caption[contains(text(), 'December 2015')]/parent::table//td[@class!='blank' and @class!='disabled']")
+    @FindBy(xpath = "./caption[contains(text(), 'December 2015')]/parent::table//td[@class!='blank' and @class!='disabled']")
     private List<WebElement> allDate;
     
    // @FindBy(xpath = "//table[@class='month']/caption")
@@ -30,9 +30,10 @@ public class ElementDatePicker extends HtmlElement {
 	
 	//MyField = driver.findElement(By.xpath("//select/option[contains(text(), '" + ClientHost + "')]"))
 	
-	Integer date = (Integer.valueOf(dayMonthYear[0]));
-	int dayAfterTomorrow = (date + 2);
+	Integer dayAfterTomorrow = (Integer.valueOf(dayMonthYear[0]) + 2);
+
 	String dayAfterTomorrowS = String.valueOf(dayAfterTomorrow);
+	
 	String monhtYear = (dayMonthYear[1] + " " + dayMonthYear[2]);
     
     public void chooseDateFromList() {
