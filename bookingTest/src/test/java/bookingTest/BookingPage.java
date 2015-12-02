@@ -3,6 +3,7 @@ package bookingTest;
 import static org.testng.Assert.*;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
@@ -16,9 +17,9 @@ public class BookingPage {
 	private ElementStationPicker station_till;
 	
 	@FindBy (xpath="//*[@id='date_dep']")
-	private ElementDatePicker dateField;
+	private WebElement dateField;
 	
-	@FindBy (xpath="//table[@class='month']")
+	@FindBy (xpath="//*[@class='rui-re-anchor']")
 	private ElementDatePicker date;
 	
 	@FindBy (xpath="//*[@name='search']")
