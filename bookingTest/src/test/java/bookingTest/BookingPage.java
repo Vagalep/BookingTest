@@ -2,6 +2,7 @@ package bookingTest;
 
 import static org.testng.Assert.*;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,14 +23,15 @@ public class BookingPage {
 	@FindBy (xpath="//*[@class='rui-re-anchor']")
 	private ElementDatePicker date;
 	
+	@FindBy (xpath="(//*[@class='rui-re-anchor']//td[@class!='blank' and @class!='disabled'])[3]")
+	private ElementDatePicker fashionPicker;
+	
 	@FindBy (xpath="//*[@name='search']")
 	private ElementSearchButton search;
 	
 	@FindBy (xpath="//*[@id='ts_res_tbl']")
 	public  ElementTrainsTable trainsTable;
 	
-	
-    
     public BookingPage(WebDriver driver) {
 	HtmlElementLoader.populatePageObject(this, driver);
     }
@@ -44,7 +46,11 @@ public class BookingPage {
 	
     public void enterDate(){
     	dateField.click();
-    	date.chooseDateFromList();
+    	dateField.sendKeys(Keys.ARROW_RIGHT);
+    	dateField.sendKeys(Keys.ARROW_RIGHT);
+    	dateField.sendKeys(Keys.ENTER);
+//    	fashionPicker.click();
+//    	date.chooseDateFromList();
 	}
 	
 	public void submitButtonSearch() {

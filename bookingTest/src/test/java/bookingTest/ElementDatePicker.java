@@ -14,7 +14,7 @@ import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
 public class ElementDatePicker extends HtmlElement {
     
-    @FindBy(xpath = "//*[@class='rui-calendar rui-panel']")
+    @FindBy(xpath = ".//*[@class='rui-calendar rui-panel']")
     WebElement calendarTable;
    
 	Locale local = new Locale("en","EN");
@@ -26,15 +26,18 @@ public class ElementDatePicker extends HtmlElement {
 	String dayAfterTomorrowS = String.valueOf(dayAfterTomorrow);
 	String monhtYear = (dayMonthYear[1] + " " + dayMonthYear[2]);
     
+
+	
     public void chooseDateFromList() {
 
-    	List<WebElement> allDate = calendarTable.findElements(By.xpath(String.format(".//caption[contains(text(), '%s')]//td[@class!='blank' and @class!='disabled']", monhtYear)));
-    	
+    	List<WebElement> allDate = calendarTable.findElements(By.xpath(String.format(".//caption[contains(text(), '%s')]/parent::table//td[@class!='blank' and @class!='disabled']", monhtYear)));
+    	// Collections.shuffle(allDate);
     	 for (WebElement item : allDate) {
-    	     if (item.getText().equals(dayAfterTomorrowS));
+    	     if (item.getText().equals(dayAfterTomorrowS)){
     	     item.click();
     	     break;
-    	 }
+    	     }
+    	 }	
 
     }
 }
