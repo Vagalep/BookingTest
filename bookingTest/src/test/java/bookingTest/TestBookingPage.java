@@ -8,6 +8,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import ru.yandex.qatools.allure.annotations.Stories;
+
 public class TestBookingPage{
 
 	  WebDriver driver;
@@ -31,22 +33,62 @@ public class TestBookingPage{
 	  	}
 	  	
 	  	@Test
-	  	public void test(){
+	  	public void enterStationFrom(){
 		bp.enterStationFrom(From);
-		bp.enterStationTill(Till);
-		bp.enterDate();
-		bp.submitButtonSearch();
-		bp.verifyTrainsTabelEnabled();
-		bp.verifyTrainsCount();
-		bp.verifyTrainPresent(FirstTrain);
+	  	}
+	  	@Test
+	  	public void enterStationTill(){
+	  	bp.enterStationTill(Till);
+	  	}
+	  	@Test
+	  	public void enterDate(){
+	  	bp.enterDate();
+	  	}
+	  	@Test
+	  	public void submitButtonSearch(){
+	  	bp.submitButtonSearch();
+	  	}
+	  	@Test
+	  	public void verifyTrainsTabelEnabled(){
+	  	bp.verifyTrainsTabelEnabled();
+	  	}
+	  	@Test (dependsOnMethods ="verifyTrainsTabelEnabled")
+	  	@Stories("Verify count of trains which we can see")
+	  	public void verifyTrainsCount(){
+	  	bp.verifyTrainsCount();
+	  	}
+	  	@Test (dependsOnMethods ="verifyTrainsCount")
+	  	@Stories("Presence verifying the train with number 115 O")
+	  	public void verifyFirstTrainPresent(){
+	  	bp.verifyTrainPresent(FirstTrain);
+	  	}
+	  	@Test (dependsOnMethods ="verifyFirstTrainPresent")
+	  	@Stories("Verify seat availability on train number 115 O")
+	  	public void verifyFirstTrainPlaces(){
 		bp.verifyFreeSuitePlacesFor115();
 		bp.verifyFreeCoupePlacesFor115();
 		bp.verifyFreeBerthPlacesFor115();
-		bp.verifyTrainPresent(SecondTrain);
+	  	}
+	  	@Test (dependsOnMethods ="verifyTrainsCount")
+	  	@Stories("Presence verifying the train with number 043 K")
+	  	public void verifySecondTrainPresent(){
+	  	bp.verifyTrainPresent(SecondTrain);
+	  	}
+	  	@Test (dependsOnMethods ="verifySecondTrainPresent")
+	  	@Stories("Verify seat availability on train number 043 K")
+	  	public void verifySecondTrainPlaces(){
 		bp.verifyFreeSuitePlacesFor043();
 		bp.verifyFreeSuitePlacesFor043();
 		bp.verifyFreeSuitePlacesFor043();
-		bp.verifyTrainPresent(ThirdTrain);
+	  	}
+	  	@Test (dependsOnMethods ="verifyTrainsCount")
+	  	@Stories("Presence verifying the train with number 143 K")
+	  	public void verifyThirdTrainPresent(){
+	  	bp.verifyTrainPresent(ThirdTrain);
+	  	}
+	  	@Test (dependsOnMethods ="verifyThirdTrainPresent")
+	  	@Stories("Verify seat availability on train number 143 K")
+	  	public void verifyThirdTrainPlaces(){
 		bp.verifyFreeSuitePlacesFor143();
 		bp.verifyFreeSuitePlacesFor143();
 		bp.verifyFreeSuitePlacesFor143();

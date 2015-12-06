@@ -2,11 +2,11 @@ package bookingTest;
 
 import static org.testng.Assert.*;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 
 public class BookingPage {
@@ -62,72 +62,89 @@ public class BookingPage {
 	public BookingPage(WebDriver driver) {
 		HtmlElementLoader.populatePageObject(this, driver);
 	}
-
+	
+	@Step
 	public void enterStationFrom(String value) {
 		station_from.enterStationFromList(value);
 	}
-
+	
+	@Step
 	public void enterStationTill(String value) {
 		station_till.enterStationFromList(value);
 	}
-
+	
+	@Step
 	public void enterDate() {
 		dateField.click();
 		fashionPicker.click();
 	}
-
+	
+	@Step
 	public void submitButtonSearch() {
 		search.clickSearchButton();
 	}
-
+	
+	@Step
 	public int tabTrainsCount() {
 		return trainsTable.trainsCount();
 	}
-
+	
+	@Step
 	public void verifyTrainsCount() {
 		assertNotEquals(tabTrainsCount(), 0, "Could not find any train");
 	}
-
+	
+	@Step
 	public void verifyTrainPresent(String value) {
 		assertTrue(trainsTable.trainNumber(value), "Train with specified number is absent");
 	}
-
+	
+	@Step
 	public void verifyTrainsTabelEnabled() {
 		assertEquals(true, trainsTable.isEnabled(), "Could not find Trains table");
 	}
-
+	
+	@Step
 	public void verifyFreeSuitePlacesFor115() {
 		assertEquals(true, suitePlaces115.isEnabled(), "Could not any suite place for train with number 115");
 	}
-
+	
+	@Step
 	public void verifyFreeCoupePlacesFor115() {
 		assertEquals(true, coupePlaces115.isEnabled(), "Could not any coupe place for train with number 115");
 	}
-
+	
+	@Step
 	public void verifyFreeBerthPlacesFor115() {
 		assertEquals(true, berthPlaces115.isEnabled(), "Could not any berth place for train with number 115");
 	}
 	
+	@Step
 	public void verifyFreeSuitePlacesFor043() {
 		assertEquals(true, suitePlaces043.isEnabled(), "Could not any suite place for train with number 043");
 	}
-
+	
+	@Step
 	public void verifyFreeCoupePlacesFor043() {
 		assertEquals(true, coupePlaces043.isEnabled(), "Could not any coupe place for train with number 043");
 	}
-
+	
+	@Step
 	public void verifyFreeBerthPlacesFor043() {
 		assertEquals(true, berthPlaces043.isEnabled(), "Could not any berth place for train with number 043");
 	}
-
+	
+	@Step
 	public void verifyFreeSuitePlacesFor143() {
 		assertEquals(true, suitePlaces143.isEnabled(), "Could not any suite place for train with number 043");
 	}
-
+	
+	@Step
 	public void verifyFreeCoupePlacesFor143() {
 		assertEquals(true, coupePlaces143.isEnabled(), "Could not any coupe place for train with number 043");
 	}
-
+	
+	@Step
 	public void verifyFreeBerthPlacesFor1043() {
 		assertEquals(true, berthPlaces143.isEnabled(), "Could not any berth place for train with number 043");
 	}
