@@ -128,6 +128,4 @@ public class TestBookingPage{
 		public void shutDown() {
 		driver.quit();
 		}
-	  	
-		
 }
