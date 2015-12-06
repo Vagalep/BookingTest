@@ -12,6 +12,11 @@ public class TestBookingPage{
 
 	  WebDriver driver;
 	  BookingPage bp;
+	  String From = "Kyiv";
+	  String Till = "Ivano-Frankivsk";
+	  String FirstTrain = "115";
+	  String SecondTrain = "043";
+	  String ThirdTrain = "143";
 	  
 	  	@BeforeClass
 	  	public void startUp() throws Exception {
@@ -27,12 +32,24 @@ public class TestBookingPage{
 	  	
 	  	@Test
 	  	public void test(){
-		bp.enterStationFrom("Kyiv");
-		bp.enterStationTill("Ivano-Frankivsk");
+		bp.enterStationFrom(From);
+		bp.enterStationTill(Till);
 		bp.enterDate();
 		bp.submitButtonSearch();
+		bp.verifyTrainsTabelEnabled();
 		bp.verifyTrainsCount();
-		bp.verifyTrainPresent("143 Ê");
+		bp.verifyTrainPresent(FirstTrain);
+		bp.verifyFreeSuitePlacesFor115();
+		bp.verifyFreeCoupePlacesFor115();
+		bp.verifyFreeBerthPlacesFor115();
+		bp.verifyTrainPresent(SecondTrain);
+		bp.verifyFreeSuitePlacesFor043();
+		bp.verifyFreeSuitePlacesFor043();
+		bp.verifyFreeSuitePlacesFor043();
+		bp.verifyTrainPresent(ThirdTrain);
+		bp.verifyFreeSuitePlacesFor143();
+		bp.verifyFreeSuitePlacesFor143();
+		bp.verifyFreeSuitePlacesFor143();
 	  	}
 	  	
 		@AfterClass

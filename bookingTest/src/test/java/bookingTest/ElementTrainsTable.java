@@ -12,17 +12,15 @@ public class ElementTrainsTable extends HtmlElement{
 	@FindBy (xpath=".//td[@class='num']/a")
 	List<WebElement> poezdaTable;
 	
-	public int trainsCount()
-	{
+	public int trainsCount(){
 		return poezdaTable.size();
 	}
     
-	public boolean trainNumber(String value)
-	{
+	public boolean trainNumber(String value){
 		for(WebElement item: poezdaTable){
-			if(item.getText().equals(value)) return true;
+		if(item.getText().contains(value)) return true;
 		}	
 	return false;	
 	}
-    
 }
+    
