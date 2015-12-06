@@ -136,16 +136,16 @@ public class BookingPage {
 	
 	@Step
 	public void verifyFreeSuitePlacesFor143() {
-		assertEquals(true, suitePlaces143.isEnabled(), "Could not any suite place for train with number 043");
+		assertEquals(true, suitePlaces143.isEnabled(), "Could not any suite place for train with number 143");
 	}
 	
 	@Step
 	public void verifyFreeCoupePlacesFor143() {
-		assertEquals(true, coupePlaces143.isEnabled(), "Could not any coupe place for train with number 043");
+		assertEquals(true, coupePlaces143.isEnabled(), "Could not any coupe place for train with number 143");
 	}
 	
 	@Step
-	public void verifyFreeBerthPlacesFor1043() {
-		assertEquals(true, berthPlaces143.isEnabled(), "Could not any berth place for train with number 043");
+	public void verifyFreeBerthPlacesFor143() {
+		assertEquals(true, berthPlaces143.isEnabled(), "Could not any berth place for train with number 143");
 	}
 }
