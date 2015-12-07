@@ -104,10 +104,6 @@
 			<groupId>ru.yandex.qatools.allure</groupId>
 				<artifactId>allure-maven-plugin</artifactId>
 				<version>${allure.plugin.version}</version>
-				<configuration>
-					<resultsPattern>target\xml-test-report</resultsPattern>
-					<outputDirectory>target\graph-test-report</outputDirectory>
-				</configuration>
 			</plugin>
 		</plugins>
 	</reporting>
