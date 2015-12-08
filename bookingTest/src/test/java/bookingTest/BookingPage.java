@@ -20,10 +20,10 @@ public class BookingPage {
 	@FindBy(xpath = "//*[@id='date_dep']")
 	private WebElement dateField;
 
-	@FindBy(xpath = "//*[@class='rui-re-anchor']")
-	private ElementDatePicker date;
+//	@FindBy(xpath = "//*[@class='rui-re-anchor']")
+//	private ElementDatePicker date;
 
-	@FindBy(xpath = "(//*[@class='rui-re-anchor']//td[@class!='blank' and @class!='disabled'])[3]")
+	@FindBy(xpath = "(//div[@id='ui-datepicker-div']//a[@class='ui-state-default'])[6]")
 	private ElementDatePicker fashionPicker;
 
 	@FindBy(xpath = "//*[@name='search']")

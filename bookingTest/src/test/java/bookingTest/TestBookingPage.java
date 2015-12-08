@@ -33,21 +33,13 @@ public class TestBookingPage{
 	  	}
 	  	
 	  	@Test
-	  	public void enterStationFrom(){
+	  	public void mainSteps(){
 		bp.enterStationFrom(From);
-	  	}
-	  	@Test
-	  	public void enterStationTill(){
 	  	bp.enterStationTill(Till);
-	  	}
-	  	@Test
-	  	public void enterDate(){
 	  	bp.enterDate();
-	  	}
-	  	@Test
-	  	public void submitButtonSearch(){
 	  	bp.submitButtonSearch();
 	  	}
+	  	
 	  	@Test
 	  	public void verifyTrainsTabelEnabled(){
 	  	bp.verifyTrainsTabelEnabled();
